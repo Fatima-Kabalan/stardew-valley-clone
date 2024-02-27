@@ -8,6 +8,7 @@ import { options } from "../../data/options";
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [selectedOption, setSelectedOption] = useState("");
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!menuOpen) return; // Prevent input change if menu is closed
@@ -23,28 +24,36 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="relative w-96 ">
-      <div
-        className={`flex   border-b border-dark_gray cursor-pointer hover:border-b-red hover:text-red ${
-          menuOpen ? "border-b-red" : ""
-        }`}
-        onClick={handleSearchClick}
-      >
-        <BiSearch size={30} className={menuOpen ? "text-red" : ""} />
-        <input
-          type="text"
-          placeholder={menuOpen ? "Search Games, Hardware, etc..." : "Search"}
-          value={searchTerm}
-          onChange={handleInputChange}
-          readOnly={!menuOpen}
-          className="text-lg outline-none border-none cursor-pointer w-full hover:placeholder-red"
+    <div className="flex justify-between items-center border-b border-dark_gray">
+      <div className="relative w-96">
+        <div
+          className={`flex gap-2 cursor-pointer hover:border-b-red hover:text-red ${
+            menuOpen ? "border-b-red" : ""
+          }`}
           onClick={handleSearchClick}
-        />
+        >
+          <BiSearch size={30} className={menuOpen ? "text-red" : ""} />
+          <input
+            type="text"
+            placeholder={menuOpen ? "Search Games, Hardware, etc..." : "Search"}
+            value={searchTerm}
+            onChange={handleInputChange}
+            readOnly={!menuOpen}
+            className="text-xl outline-none border-none cursor-pointer w-full hover:placeholder-red"
+            onClick={handleSearchClick}
+          />
+        </div>
+        {menuOpen && (
+          <SearchMenu onClose={handleMenuClose} menuItems={mockMenuItems} />
+        )}
       </div>
-      {menuOpen && (
-        <SearchMenu onClose={handleMenuClose} menuItems={mockMenuItems} />
-      )}
-      <Dropdown options={options} onSelect={() => console.log("selected")} />
+
+      <Dropdown
+        options={options}
+        placeholder="All Categories"
+        selectedOption={selectedOption}
+        setSelectedOption={setSelectedOption}
+      />
     </div>
   );
 }
