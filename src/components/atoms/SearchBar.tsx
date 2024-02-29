@@ -25,7 +25,7 @@ export default function SearchBar() {
 
   return (
     <div className="flex justify-between items-center border-b border-dark_gray">
-      <div className="relative w-96">
+      <div className="relative">
         <div
           className={`flex gap-2 cursor-pointer hover:border-b-red hover:text-red ${
             menuOpen ? "border-b-red" : ""
