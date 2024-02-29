@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import FlagText from "../../components/atoms/FlagText";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
         America Inc. Headquarters are in Redmond, Washington, USA
       </p>
       <div className="flex flex-col xl:flex-row gap-6">
-        <div className="flex gap-8 items-center text-center text-xs text-white font-bold xl:text-base">
+        <div className="flex gap-8 items-center text-center text-xs text-white font-bold lg:text-base">
           <Link
             to="#contact"
             className="hover:text-white hover:border-b-2 hover:border-red"
@@ -35,19 +36,7 @@ export default function Footer() {
           </Link>
         </div>
 
-        <div className="flex items-center gap-2  justify-center">
-          <div className="flex items-center border border-white rounded w-8 sm:w-10">
-            <img
-              src={require("../../assets/images/png/Flag.png")}
-              className="w-full h-auto"
-            />
-          </div>
-          <Link to="#language">
-            <h1 className="text-white text-xs  font-bold hover:text-white hover:border-b-2 hover:border-white cursor-pointer md:text-base">
-              English (United States)
-            </h1>
-          </Link>
-        </div>
+        <FlagText withBorder={true} text="English (United States)" />
       </div>
     </div>
   );
