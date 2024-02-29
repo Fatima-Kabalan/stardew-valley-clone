@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { IoChevronDown, IoChevronUp } from "react-icons/io5";
+import UpArrow from "../icons/UpArrow";
+import DownArrow from "../icons/DownArrow";
 
 interface Option {
   value: string;
@@ -24,17 +25,20 @@ export default function Dropdown({
   return (
     <div className="relative">
       <button
+        onBlur={() => setIsOpen(false)} // Close dropdown when button loses focus
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 text-xl p-2  bg-white cursor-pointer  whitespace-nowrap"
+        className={`flex items-center gap-2 text-xl p-2 bg-white cursor-pointer whitespace-nowrap ${
+          isOpen ? "text-red" : "text-dark_gray"
+        }`}
       >
-        <span className="text-dark_gray hover:text-red font-medium">
+        <span className="flex items-center justify-center gap-2 hover-red">
           {placeholder}
+          {isOpen ? (
+            <UpArrow className="text-center text-dark_gray hover:text-red w-8" />
+          ) : (
+            <DownArrow className="text-center text-dark_gray hover:text-red w-8" />
+          )}
         </span>
-        {isOpen ? (
-          <IoChevronUp className="ml-2 text-dark_gray hover:text-red" />
-        ) : (
-          <IoChevronDown className="ml-2 text-dark_gray hover:text-red" />
-        )}
       </button>
       {isOpen && (
         <div className="absolute top-full left-0 mt-1 bg-white w-full border border-gray-200 shadow-md rounded-md">
@@ -45,7 +49,7 @@ export default function Dropdown({
                 setSelectedOption(option);
                 setIsOpen(false);
               }}
-              className="block w-full py-2 px-4 text-left hover:bg-gray-100 focus:outline-none"
+              className="block w-full py-2 px-4 text-left hover:bg-gray-100"
             >
               {option.label}
             </button>
