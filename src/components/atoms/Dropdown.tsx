@@ -25,7 +25,7 @@ export default function Dropdown({
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 text-xl py-2 px-4 pt-4 pb-3 bg-white cursor-pointer  whitespace-nowrap"
+        className="flex items-center gap-2 text-xl p-2  bg-white cursor-pointer  whitespace-nowrap"
       >
         <span className="text-dark_gray hover:text-red font-medium">
           {placeholder}
