@@ -9,12 +9,14 @@ interface IconButtonProps {
 
 export default function IconButton({ icon, name, to }: IconButtonProps) {
   return (
-    <Link to={to}>
-      <div className="flex items-center gap-2 hover:text-red cursor-pointer">
-        <span className="w-6">{icon}</span>
-        <span className="text-xl text-dark_gray font-medium hover:text-red">
-          {name}
+    <Link to={to} className="hover:text-red">
+      <div className="flex cursor-pointer">
+        <span className="w-6 mr-2 flex justify-center items-center">
+          {icon}
         </span>
+        <h1 className="text-xl text-dark_gray font-medium hover:text-red">
+          {name}
+        </h1>
       </div>
     </Link>
   );
