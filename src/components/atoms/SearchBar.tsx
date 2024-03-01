@@ -24,7 +24,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="flex justify-between items-center border-b border-dark_gray">
+    <div className="flex justify-between items-center border-b border-dark_gray hover-red">
       <div className="relative">
         <div
           className={`flex gap-2 cursor-pointer hover:border-b-red hover:text-red ${
@@ -35,7 +35,7 @@ export default function SearchBar() {
           <BiSearch size={30} className={menuOpen ? "text-red" : ""} />
           <input
             type="text"
-            placeholder={menuOpen ? "Search Games, Hardware, etc..." : "Search"}
+            placeholder={menuOpen ? "Search Games, etc..." : "Search"}
             value={searchTerm}
             onChange={handleInputChange}
             readOnly={!menuOpen}
