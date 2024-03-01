@@ -7,7 +7,6 @@ import FilledHeart from "../../components/icons/NavIcons/FilledHeart";
 import Question from "../../components/icons/NavIcons/Question";
 import User from "../../components/icons/NavIcons/User";
 import Ad from "../../components/sections/Ad";
-import Tabs from "../../components/sections/Tabs";
 import Car from "../../components/svg/Car";
 import Game from "../../components/svg/Game";
 import StarCircle2 from "../../components/svg/StarCircle2";
@@ -18,7 +17,7 @@ export default function LargeScreenNavbar() {
       <div className="flex  items-center justify-between pr-8 border-b-2">
         {/*  Left side of Navbar */}
         <div className="flex gap-2">
-          <div className="flex items-center justify-center bg-red w-36 h-16">
+          <div className="flex items-center justify-center bg-red w-28 h-16 p-2">
             <NintendoLogo />
           </div>
           <div className="flex items-center justify-center">
@@ -39,8 +38,6 @@ export default function LargeScreenNavbar() {
         </div>
       </div>
       {/* Second row */}
-
-      <Tabs tabs={tabs} />
 
       {/*  Third row */}
       <div className=" flex justify-center gap-6 bg-light_black ">
