@@ -8,7 +8,10 @@ export default function SmallScreenNavbar() {
   return (
     <div className=" xl:hidden  block">
       <div className="bg-red flex justify-between p-4">
-        <NintendoLogo />
+        <div className="w-20">
+          <NintendoLogo />
+        </div>
+
         <div className="flex items-center gap-4">
           <div className="w-32 h-auto text-white">
             <MyNintendoStoreLogo />
