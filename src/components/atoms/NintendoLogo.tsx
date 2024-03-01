@@ -3,7 +3,8 @@ export default function NintendoLogo() {
     <svg
       viewBox="0 0 97 24"
       xmlns="http://www.w3.org/2000/svg"
-      width="90"
+      width="100%"
+      height="100%"
       role="presentation"
       data-testid="NintendoRacetrackLogoIcon"
       color="white"
