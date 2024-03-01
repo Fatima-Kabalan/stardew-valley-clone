@@ -9,8 +9,10 @@ import MenuCardsList from "../sections/MenuCardsList";
 interface DropdownCardsProps {
   icon: ReactNode;
   name: string;
-  onClose: () => void;
+  onClose?: () => void;
   to: string;
+  isActive: boolean;
+  onClick?: () => void;
 }
 
 export default function DropdownCards({
@@ -36,7 +38,7 @@ export default function DropdownCards({
       </div>
 
       {isOpen && (
-        <div className="fixed top-10 left-0 right-0 bottom-0  rounded-md   bg-black opacity-80">
+        <div className="fixed top-12 left-0 right-0 bottom-0  rounded-md   bg-black opacity-90">
           <button
             className="absolute top-2 right-2  w-10 text-gray-400 hover:text-dark_gray"
             onClick={onClose}
