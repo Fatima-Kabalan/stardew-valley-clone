@@ -214,3 +214,23 @@ body{
   cursor: pointer;
   color: white;
 }
+
+
+
+/* Button animation */
+.button-hover-animation:hover {
+  animation: bounceIn 1s; /* Added animation property */
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0; /* Adjusted from transform: scale(0) */
+    transform: scale3d(0.3, 0.3, 0.3); /* Adjusted to scale3d */
+  }
+  to {
+    opacity: 1; /* Adjusted from transform: scale(1) */
+    transform: scale3d(1, 1, 1); /* Adjusted to scale3d */
+  }
+}
+
+

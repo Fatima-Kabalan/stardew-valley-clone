@@ -1,3 +1,5 @@
+import "animate.css";
+
 interface ButtonProps {
   text: string;
   onClick?: () => void;
@@ -6,7 +8,7 @@ interface ButtonProps {
 export default function Button({ text, onClick }: ButtonProps) {
   return (
     <button
-      className="bg-red hover:bg-rose-700 text-white  text-xl font-semibold py-4 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+      className="bg-red hover:bg-rose-700 text-white  text-xl font-semibold py-4 px-6 rounded-lg shadow-lg  button-hover-animation"
       onClick={onClick}
     >
       {text}
