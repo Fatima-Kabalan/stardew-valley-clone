@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Heart from "../svg/Heart";
+import NintendoSwitch from "./NintendoSwitch";
+import HeartIcon from "../icons/HeartIcon";
 
 interface CardProps {
   imageUrl: string;
@@ -62,9 +63,9 @@ export default function ProductCard({
             )}
           </div>
 
-          <div className="flex justify-between items-center border-l-red border-l-4 p-2 h-8">
-            <p className="text-xl text-lighter_gray">Nintendo Switch</p>
-            <Heart />
+          <div className="flex items-center justify-between">
+            <NintendoSwitch />
+            <HeartIcon />
           </div>
         </div>
       </div>
