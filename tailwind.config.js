@@ -12,7 +12,7 @@ module.exports = {
         "gray_DA":"#DADADA",
         "charcoal_gray":"#242424",
         "lighter_gray":"#484848",
-        "light_black":"#F8F8F8",
+        "gray_F8":"#F8F8F8",
         "light_blue":"#d6f0fa"
       },
       

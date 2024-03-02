@@ -19,7 +19,7 @@ export default function SmallScreenNavbar() {
           <FlagText withBorder={true} />
         </div>
       </div>
-      <div className="bg-light_black">
+      <div className="bg-gray_F8">
         <Ad
           icon={<StarCircle />}
           title={"Free shipping"}

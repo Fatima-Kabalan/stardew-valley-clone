@@ -41,7 +41,7 @@ export default function LargeScreenNavbar() {
       {/* Second row */}
       <TabsList />
       {/*  Third row */}
-      <div className=" flex justify-center gap-6 bg-light_black ">
+      <div className=" flex justify-center gap-6 bg-gray_F8 ">
         <Ad
           icon={<Car />}
           title={"Free shipping"}
