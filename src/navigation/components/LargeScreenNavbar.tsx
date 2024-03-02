@@ -7,6 +7,7 @@ import FilledHeart from "../../components/icons/NavIcons/FilledHeart";
 import Question from "../../components/icons/NavIcons/Question";
 import User from "../../components/icons/NavIcons/User";
 import Ad from "../../components/sections/Ad";
+import TabsList from "../../components/sections/TabsList";
 import Car from "../../components/svg/Car";
 import Game from "../../components/svg/Game";
 import StarCircle2 from "../../components/svg/StarCircle2";
@@ -38,7 +39,7 @@ export default function LargeScreenNavbar() {
         </div>
       </div>
       {/* Second row */}
-
+      <TabsList />
       {/*  Third row */}
       <div className=" flex justify-center gap-6 bg-light_black ">
         <Ad
