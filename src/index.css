@@ -103,6 +103,7 @@ body{
 
 .hover-red:hover {
   color: red;
+  fill: red;
 }
 
 .fill-red{
@@ -129,6 +130,8 @@ body{
 .hover-red:hover span {
   color:red;
 }
+
+
 
 .hover-rose:hover h1{
   color:rgb(159, 18, 57)
@@ -234,3 +237,48 @@ body{
 }
 
 
+/* test */
+.dropdown-parent {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: green;
+  transition: max-height 0.5s ease-in-out;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.dropdown-parent.open .dropdown-content {
+  max-height: 300px; /* Set your desired max-height */
+}
+
+.dropdown-one {
+  width: 100%;
+  background: blue;
+  height: 70px;
+}
+
+.open {
+  display: block;
+  border: 1px solid #ccc;
+}
+
+.dropdown-two {
+  width: 100%;
+  height: 30px;
+}
+
+.dropdown-three {
+  width: 100%;
+  height: 100px;
+}
+
+.dropdown-three {
+  width: 100%;
+  height: 100px;
+}
