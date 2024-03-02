@@ -3,7 +3,8 @@ export default function Game() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 32 32"
-      width="42"
+      width="100%"
+      height="100%"
       role="presentation"
       data-testid="SwitchIcon"
       color="currentColor"
