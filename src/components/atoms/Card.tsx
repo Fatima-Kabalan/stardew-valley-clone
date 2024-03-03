@@ -1,22 +1,10 @@
-import Game from "../svg/Game";
+import ESRBCard from "./ESRBCard";
 
-export default function Card({ shadow }: { shadow: boolean }) {
+export default function Card() {
   return (
-    <div
-      className={`flex items-center p-6 gap-2 rounded-xl  w-fit ${
-        shadow ? "shadow-lg " : ""
-      }`}
-    >
-      <div className="w-12 h-12">
-        <Game />
-      </div>
-      <div className="flex flex-col justify-center divide-y-2 divide-dark_gray text-gray-500">
-        <p className="w-96">
-          Fantasy Violence, Use of Alcohol, Use of Tobacco, Simulated Gambling,
-          Mild Language, Mild Blood
-        </p>
-        <span>Users Interact</span>
-      </div>
+    <div className="bg-gray_F8 flex  flex-col items-center justify-center p-8 gap-2  rounded-xl lg:w-1/2">
+      <h1 className="font-bold text-xl text-dark_gray">ESRB Rating</h1>
+      <ESRBCard shadow={true} />
     </div>
   );
 }
