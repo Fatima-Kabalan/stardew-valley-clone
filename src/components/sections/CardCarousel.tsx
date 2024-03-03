@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import ProductCard from "../atoms/ProductCard";
 import RightArrow from "../icons/RightArrow";
 import LeftArrow from "../icons/LeftArrow";
@@ -8,21 +8,11 @@ type CardCarouselProps = {
   cardsPerPage: number; // Number of cards to display per page
 };
 
-const CardCarousel = ({ cards, cardsPerPage }: CardCarouselProps) => {
+export default function CardCarousel({
+  cards,
+  cardsPerPage,
+}: CardCarouselProps) {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [hideScrollbar, setHideScrollbar] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScrollPosition(0); // Reset scroll position on resize
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const handleNextClick = () => {
     setScrollPosition(scrollPosition + 1);
@@ -37,14 +27,13 @@ const CardCarousel = ({ cards, cardsPerPage }: CardCarouselProps) => {
   const visibleCards = cards.slice(startIndex, endIndex);
 
   return (
-    <div
-      className="relative overflow-hidden"
-      style={{ overflowX: hideScrollbar ? "hidden" : "auto" }}
-    >
+    <div className="relative overflow-hidden">
       <div
         className="flex gap-2 p-4 overflow-x-auto"
         style={{
           WebkitOverflowScrolling: "touch",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
         }}
       >
         {visibleCards.map((card, index) => (
@@ -71,6 +60,4 @@ const CardCarousel = ({ cards, cardsPerPage }: CardCarouselProps) => {
       )}
     </div>
   );
-};
-
-export default CardCarousel;
+}

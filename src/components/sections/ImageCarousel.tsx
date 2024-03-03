@@ -4,20 +4,25 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { images } from "../../data/imagesCarousel";
 import LeftArrow from "../icons/LeftArrow";
 import RightArrow from "../icons/RightArrow";
-import Lightbox from "./LightBox";
+import Dialog from "../atoms/Dialog";
+import DialogContent from "./DialogContent";
 
 export default function ImageCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [showLightbox, setShowLightbox] = useState(false);
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+
+  const handleToggleOverlay = () => {
+    setIsOverlayVisible(!isOverlayVisible);
+  };
   const [isHovered, setIsHovered] = useState(false);
 
   const handleThumbnailClick = (index: number) => {
     setActiveIndex(index);
-    setShowLightbox(true);
   };
 
-  const closeLightbox = () => {
-    setShowLightbox(false);
+  const handleImageClick = (index: number) => {
+    setActiveIndex(index);
+    setIsOverlayVisible(true);
   };
 
   const renderCustomPrevButton = (onClickHandler: () => void) => (
@@ -44,22 +49,22 @@ export default function ImageCarousel() {
 
   return (
     <div
-      className="flex flex-col max-w-3xl mx-auto relative rounded-xl"
+      className="flex flex-col max-w-3xl mx-auto relative rounded-xl gap-2"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <Carousel
         selectedItem={activeIndex}
-        showThumbs={false}
+        onClickItem={handleImageClick}
+        showThumbs={true}
         renderArrowPrev={renderCustomPrevButton}
         renderArrowNext={renderCustomNextButton}
+        showStatus={false}
+        showIndicators={false}
+        autoPlay={false}
       >
         {images.map((image, index) => (
-          <div
-            key={index}
-            className="rounded-xl cursor-zoom-in"
-            onClick={() => handleThumbnailClick(index)}
-          >
+          <div key={index} className="rounded-xl cursor-zoom-in ">
             <img
               src={require(`../../assets/images/${image.imageUrl}`)}
               alt={`Image ${index + 1}`}
@@ -68,29 +73,17 @@ export default function ImageCarousel() {
           </div>
         ))}
       </Carousel>
-      <div className="flex items-start mt-4 w-36 h-20 ">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={require(`../../assets/images/${image.imageUrl}`)}
-            alt={`Thumbnail ${index + 1}`}
-            className={`cursor-pointer mx-2 rounded-xl ${
-              index === activeIndex ? "border-b-4 border-red" : ""
-            }`}
-            onClick={() => handleThumbnailClick(index)}
-            style={{ opacity: activeIndex === index ? 1 : 0.65 }}
+      <Dialog
+        showOverlay={isOverlayVisible}
+        onClose={handleToggleOverlay}
+        children={
+          <DialogContent
+            activeIndex={activeIndex}
+            onClose={handleToggleOverlay}
+            handleThumbnailClick={handleThumbnailClick}
           />
-        ))}
-      </div>
-      {showLightbox && (
-        <Lightbox
-          images={images.map(
-            (image) => `../../assets/images/${image.imageUrl}`
-          )}
-          activeIndex={activeIndex}
-          closeLightbox={closeLightbox}
-        />
-      )}
+        }
+      />
     </div>
   );
 }
