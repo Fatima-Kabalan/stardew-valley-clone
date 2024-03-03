@@ -101,28 +101,9 @@ body{
   height: 30px;
 }
 
-.hover-red:hover {
-  color: red;
-  fill: red;
-}
 
-.fill-red{
-  fill:red;
-}
 
-.custom-carousel .control-arrow {
-  width: 60px;
-  height: 60px;
-}
-
-.custom-carousel .control-prev {
-  left: 15px;
-}
-
-.custom-carousel .control-next {
-  right: 15px;
-}
-
+/* hover red color */
 .hover-red:hover svg {
   fill:red;
 }
@@ -132,8 +113,16 @@ body{
 }
 
 
+.hover-red:hover {
+  color: red;
+  fill: red;
+}
 
-.hover-rose:hover h1{
+.fill-red{
+  fill:red;
+}
+
+.hover-rose:hover h1 span{
   color:rgb(159, 18, 57)
 }
 
@@ -157,24 +146,6 @@ body{
 /* carousel */
 .carousel-item img {
   cursor: zoom-in;
-}
-
-.thumbnails {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  margin-top: 10px;
-}
-
-.thumbnail {
-  cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-  border-radius: 5px;
-}
-
-.thumbnail.active {
-  opacity: 1;
 }
 
 .zoomed-carousel {
