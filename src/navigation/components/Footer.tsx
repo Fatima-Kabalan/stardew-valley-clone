@@ -3,7 +3,7 @@ import FlagText from "../../components/atoms/FlagText";
 
 export default function Footer() {
   return (
-    <div className="flex flex-col gap-6 xl:flex-row items-center  sticky bottom-0 left-0 right-0 w-full h-65 p-8 bg-charcoal_gray xl:h-28">
+    <div className="flex flex-col gap-6 xl:flex-row items-center  sticky bottom-0 left-0 right-0 w-full h-80 p-8 bg-charcoal_gray xl:h-28">
       <p className="text-white text-center max-w-96 xl:text-left xl:max-w-3xl xl:mx-auto">
         © Nintendo. Games are property of their respective owners. Nintendo of
         America Inc. Headquarters are in Redmond, Washington, USA
