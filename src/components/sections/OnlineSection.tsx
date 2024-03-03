@@ -4,7 +4,7 @@ import Button from "../atoms/Button";
 
 export default function OnlineSection() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-1  bg-gray_F8  m-20 rounded-xl">
+    <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-1  bg-gray_F8  md:m-8 rounded-xl">
       <div className="flex flex-col items-center md:items-start gap-4 px-6 py-6 lg:pb-0">
         <div className="w-full md:w-52">
           <OnlineImage />

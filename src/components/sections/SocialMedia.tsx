@@ -4,7 +4,7 @@ import Instagram from "../icons/Instagram";
 
 export default function SocialMedia() {
   return (
-    <div className="bg-red p-4 flex justify-between ">
+    <div className="bg-red p-8 flex justify-between h-28">
       <div className="w-48">
         <NintendoLogo />
       </div>

@@ -5,7 +5,7 @@ export default function ESRBCard({ shadow }: { shadow: boolean }) {
     <>
       <Link to={"#link"}>
         <div
-          className={`flex items-center rounded-xl  w-full md:max-w-sm  bg-white cursor-pointer ${
+          className={`flex items-center rounded-xl  w-full md:max-w-md  bg-white cursor-pointer ${
             shadow ? "shadow-lg p-4" : ""
           }`}
         >
@@ -13,7 +13,7 @@ export default function ESRBCard({ shadow }: { shadow: boolean }) {
             <img src={require("../../assets/images/png/E-logo.png")} />
           </div>
           <div className="flex flex-col justify-center  text-gray-500 p-4">
-            <p className="w-full md:w-auto border-b border-black md:border-none">
+            <p className="w-full md:w-auto border-b border-black">
               Fantasy Violence, Use of Alcohol, Use of Tobacco, Simulated
               Gambling, Mild Language, Mild Blood
             </p>

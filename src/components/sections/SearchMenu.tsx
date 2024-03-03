@@ -12,7 +12,7 @@ interface MenuComponentProps {
 
 export default function SearchMenu({ onClose, menuItems }: MenuComponentProps) {
   return (
-    <div className="fixed top-10 left-0 right-0 bottom-0  z-50 bg-white shadow-md mt-1 rounded-md p-2">
+    <div className="fixed top-12 left-0 right-0 bottom-0  z-50 bg-white shadow-md mt-1 rounded-md p-2">
       <button
         className="absolute top-2 right-2 text-gray w-10"
         onClick={onClose}
