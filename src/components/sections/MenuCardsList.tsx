@@ -1,11 +1,14 @@
-import { gamesMenuCards as cards } from "../../data/gamesMenuCards";
-import MenuCard from "../atoms/MenuCard";
+import MenuCard, { Card } from "../atoms/MenuCard";
 
-export default function MenuCardsList() {
+interface MenuCardsListProps {
+  cards: Card[];
+}
+
+export default function MenuCardsList({ cards }: MenuCardsListProps) {
   return (
-    <div className="flex fex-wrap gap-2 justify-center p-4">
+    <div className="flex fex-wrap gap-2 justify-center p-4 ">
       {cards.map((card, i) => (
-        <MenuCard key={i} text={card.text} icon={card.icon} to={card.to} />
+        <MenuCard key={i} card={card} />
       ))}
     </div>
   );
