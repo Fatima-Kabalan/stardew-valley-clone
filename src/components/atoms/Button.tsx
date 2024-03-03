@@ -13,7 +13,8 @@ export default function Button({ text, onClick, icon }: ButtonProps) {
       onClick={onClick}
     >
       <div className="flex items-center justify-center gap-6">
-        <div className="w-8 h-8 text-white">{icon}</div>
+        {icon ? <div className="w-8 h-8 text-white">{icon}</div> : ""}
+
         <span> {text}</span>
       </div>
     </button>
